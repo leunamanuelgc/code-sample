@@ -4,24 +4,7 @@ Creado por:
 
 | Alumno | Tareas realizadas | Commits | Ficheros |
 | ----------- | ----------- | ----------- | ----------- |
-| Manuel Gutiérrez Castro | 
-- Gestión de los mensajes asíncronos entre servicios.
-- Formulario para creación de discos e instancias con html y javascript.
-- Participación en la creación de entidades.
-- Participación en la API REST y en los servicios.
-|
-- Added full Disk and Instance creation functionality.
-- Added AMQP for disks creation.
-- Added RabbitMQConfig, and started queueing implementation.
-- Add disk-instance OneToOne relation.
-- Refactor services + controller into one.
-|
-- InstanceService
-- DiskService
-- RabbitMQConfig
-- ApiService
-- ApiRestController
-|
+| Manuel Gutiérrez Castro | - Gestión de los mensajes asíncronos entre servicios. - Formulario para creación de discos e instancias con html y javascript. - Participación en la creación de entidades. - Participación en la API REST y en los servicios. | - Added full Disk and Instance creation functionality. - Added AMQP for disks creation. - Added RabbitMQConfig, and started queueing implementation. - Add disk-instance OneToOne relation. - Refactor services + controller into one. | - InstanceService - DiskService - RabbitMQConfig - ApiService - ApiRestController |
 | Antón Rodríguez Seselle | Text | Text | Text |
 | Bernat Roselló Muñoz | Text | Text | Text |
 
