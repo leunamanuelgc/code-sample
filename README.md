@@ -115,24 +115,29 @@ De esta manera se puede recibir toda la información del formulario de creación
 
 ***ApiService***
 - Se comunica con *DiskService* e *InstanceService*, a través del Broker RabbitMQ. Envía mensajes a las colas *disk-requests* e *instance-requests* y recibe mensajes de la cola *disk-statuses* e *instance-statuses*.
+
+Envío de *DiskRequest*
 ```
 public void sendDiskRequest(Disk disk) {
   System.out.println("Sending disk request to disk service through: " + RabbitMQConfig.diskRequestsQueueName);
   rabbitTemplate.convertAndSend(RabbitMQConfig.diskRequestsQueueName, disk);
 }
 ```
+Recepción de *DiskStatuses*
 ```
 @RabbitListener(queues=RabbitMQConfig.diskStatusesQueueName, ackMode="AUTO")
 public void waitForDiskStatusMessage(Disk disk) {
   ...
 }
 ```
+Envío de *InstanceRequest*
 ```
 public void sendInstanceRequest(Instance instance) {
   System.out.println("Sending instance request to instance service through: " + RabbitMQConfig.instanceRequestsQueueName);
   rabbitTemplate.convertAndSend(RabbitMQConfig.instanceRequestsQueueName, instance);
 }
 ```
+Recepción de *InstanceStatuses*
 ```
 @RabbitListener(queues=RabbitMQConfig.instanceStatusesQueueName, ackMode="AUTO")
 public void waitForInstanceStatusMessage(Instance instance) {
