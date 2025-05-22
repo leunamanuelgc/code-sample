@@ -29,43 +29,27 @@ Creado por:
         </table>
       </td>
       <td align="left">
-        <ul>
-          <li>Added full Disk and Instance creation functionality</li>
-          <li>Added AMQP for disks creation</li>
-          <li>Added RabbitMQConfig, and started queueing implementation</li>
-          <li>Add disk-instance OneToOne relation</li>
-          <li>Refactor services + controller into one</li>
-        </ul>
+        <table>
+          <tbody>
+            <tr><td>"Added full Disk and Instance creation functionality"</td></tr>
+            <tr><td>"Added AMQP for disks creation"</td></tr>
+            <tr><td>"Added RabbitMQConfig, and started queueing implementation"</td></tr>
+            <tr><td>"Add disk-instance OneToOne relation"</td></tr>
+            <tr><td>"Refactor services + controller into one"</td></tr>
+          </tbody>
+        </table>
       </td>
       <td align="left">
-        <ul>
-          <li>InstanceService</li>
-          <li>DiskService</li>
-          <li>RabbitMQConfig</li>
-          <li>ApiService</li>
-          <li>ApiRestController</li>
-        </ul>
+        <table>
+          <tbody>
+            <tr><td>InstanceService.java</td></tr>
+            <tr><td>DiskService.java</td></tr>
+            <tr><td>RabbitMQConfig.java</td></tr>
+            <tr><td>ApiService.java</td></tr>
+            <tr><td>ApiRestController.java</td></tr>
+          </tbody>
+        </table>
       </td>
-    </tr>
-    <tr>
-      <td>col 2 is</td>
-      <td align="center">centered</td>
-      <td align="right">$12</td>
-    </tr>
-    <tr>
-      <td>zebra stripes</td>
-      <td align="center">are neat</td>
-      <td align="right">$1</td>
-    </tr>
-    <tr>
-      <td>
-        <ul>
-          <li>item1</li>
-          <li>item2</li>
-        </ul>
-      </td>
-      <td align="center">See the list</td>
-      <td align="right">from the first column</td>
     </tr>
   </tbody>
 </table>
