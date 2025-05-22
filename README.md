@@ -7,4 +7,4 @@ Creado por:
 
 ## Esquema
 
-	~~The world is flat.~~
+~~The world is flat.~~
