@@ -17,7 +17,8 @@ Creado por:
       <th align="center">Ficheros</th>
     </tr>
     <tr>
-      <td align="center">
+      <td align="left">Manuel Gutiérrez Castro</td>
+      <td align="left">
         <ul>
           <li>Gestión de los mensajes asíncronos entre servicios</li>
           <li>Formulario para creación de discos e instancias con html y javascript</li>
@@ -25,7 +26,7 @@ Creado por:
           <li>Participación en la API REST y en los servicios</li>
         </ul>
       </td>
-      <td align="center">
+      <td align="left">
         <ul>
           <li>Added full Disk and Instance creation functionality</li>
           <li>Added AMQP for disks creation</li>
@@ -34,7 +35,7 @@ Creado por:
           <li>Refactor services + controller into one</li>
         </ul>
       </td>
-      <td align="center">
+      <td align="left">
         <ul>
           <li>InstanceService</li>
           <li>DiskService</li>
