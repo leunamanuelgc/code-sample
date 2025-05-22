@@ -97,9 +97,14 @@ Creado por:
   </tbody>
 </table>
 
+## INSTRUCCIONES DE EJECUCIÓN
+
 ## DOCUMENTACIÓN
+### Diagrama con las entidades de las Bases de Datos
+
 ### Diagrama de clases
-![DAD - Diagrama de clases](https://github.com/user-attachments/assets/83a83b99-838c-41a8-8f55-94c74e873251)
+![Diagrama de clases_dark](https://github.com/user-attachments/assets/f70a6c1c-ab4b-4956-99c6-0bc1f8dde78d)
+
 ### API
 ***ApiRestController***
 - Accede a los *endpoints* de discos, instancias y la creación del servidor.
@@ -219,5 +224,3 @@ public void sendStatusUpdate(Instance instance, Instance.Status status) {
   rabbitTemplate.convertAndSend(RabbitMQConfig.instanceStatusesQueueName, instance);
 }
 ```
-
-
