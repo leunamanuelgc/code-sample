@@ -154,7 +154,7 @@ public void waitForInstanceStatusMessage(Instance instance) {
 ***Disk***
 - Clase que representa la entidad de discos.
 
-| Disk |
+| Disk | |
 | - | - |
 | Long id | Identificador del disco |
 | int size | Tamaño (en GB) del disco |
