@@ -19,12 +19,14 @@ Creado por:
     <tr>
       <td align="left">Manuel Gutiérrez Castro</td>
       <td align="left">
-        <ul>
-          <li>Gestión de los mensajes asíncronos entre servicios</li>
-          <li>Formulario para creación de discos e instancias con html y javascript</li>
-          <li>Participación en la creación de entidades</li>
-          <li>Participación en la API REST y en los servicios</li>
-        </ul>
+        <table>
+          <tbody>
+            <tr>Gestión de los mensajes asíncronos entre servicios</tr>
+            <tr>Formulario para creación de discos e instancias con html y javascript</tr>
+            <tr>Participación en la creación de entidades</tr>
+            <tr>Participación en la API REST y en los servicios</tr>
+          </tbody>
+        </table>
       </td>
       <td align="left">
         <ul>
