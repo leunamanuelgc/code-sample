@@ -19,7 +19,7 @@ Creado por:
     <tr>
       <td align="left">Manuel Gutiérrez Castro</td>
       <td align="left">
-        <table border=5>
+        <table border=-5>
           <tbody>
             <tr><td>Gestión de los mensajes asíncronos entre servicios</td></tr>
             <tr><td>Formulario para creación de discos e instancias con html y javascript</td></tr>
@@ -29,7 +29,7 @@ Creado por:
         </table>
       </td>
       <td align="left">
-        <table border=5>
+        <table border=-5>
           <tbody>
             <tr><td>"Added full Disk and Instance creation functionality"</td></tr>
             <tr><td>"Added AMQP for disks creation"</td></tr>
@@ -40,7 +40,7 @@ Creado por:
         </table>
       </td>
       <td align="left">
-        <table border=5>
+        <table border=-5>
           <tbody>
             <tr><td>InstanceService.java</td></tr>
             <tr><td>DiskService.java</td></tr>
