@@ -108,7 +108,7 @@ Creado por:
 
 ### API
 ***ApiRestController***
-- Accede a los *endpoints* de discos, instancias y la creación del servidor.
+- Accede a los *endpoints* de discos, instancias y la creación del servidor. Le envía el DTO ServerCreationRequest a ApiService.
 ```
 @PostMapping("/servers")
 public ResponseEntity<?> createServer(@RequestBody ServerCreationRequest request)  {
@@ -122,6 +122,7 @@ De esta manera se puede recibir toda la información del formulario de creación
 
 ***ApiService***
 - Se comunica con *DiskService* e *InstanceService*, a través del Broker RabbitMQ. Envía mensajes a las colas *disk-requests* e *instance-requests* y recibe mensajes de la cola *disk-statuses* e *instance-statuses*.
+- También almacena los discos e instancias en *DiskRepository* e *InstanceRepository*.
 
 | Envío de *DiskRequest* |
 | - |
@@ -155,7 +156,38 @@ public void waitForInstanceStatusMessage(Instance instance) {
   ...
 }
 ```
-- También se comunica con *DiskRepository* e *InstanceRepository*.
+***ServerCreationRequest***
+- Un DTO que empaqueta los discos e instancias creados desde el formulario, y los envía con AJAX al ApiRestController.
+
+```
+public class ServerCreationRequest {
+	private Disk disk;
+	private Instance instance;
+	public ServerCreationRequest() {}
+	public ServerCreationRequest(Disk disk, Instance instance, boolean hasDiskRequestEnded, boolean hasInstanceRequestEnded) {
+		this.disk = disk;
+		this.instance = instance;
+	}
+...
+}
+```
+***TrailingSlashFilter***
+- Permite redireccionar a los endpoints correctos independientemente de si se les añade "/" al final.
+- Por ejemplo, si se accede a < localhost:8080/disks/ > redirecciona a < localhost:8080/disks >
+
+```
+public class ServerCreationRequest {
+	private Disk disk;
+	private Instance instance;
+	public ServerCreationRequest() {}
+	public ServerCreationRequest(Disk disk, Instance instance, boolean hasDiskRequestEnded, boolean hasInstanceRequestEnded) {
+		this.disk = disk;
+		this.instance = instance;
+	}
+...
+}
+```
+
 ### DISKS
 ***Disk***
 - Clase que representa la entidad de discos.
@@ -189,6 +221,9 @@ public void sendStatusUpdate(Disk disk, Disk.Status status) {
 	rabbitTemplate.convertAndSend(RabbitMQConfig.diskStatusesQueueName, disk);
 }
 ```
+***DiskRepository***
+- Interfaz que extiende JpaRepository para almacenar los discos.
+
 ### INSTANCES
 ***Instance***
 - Clase que representa la entidad de instancias.
@@ -225,3 +260,5 @@ public void sendStatusUpdate(Instance instance, Instance.Status status) {
   rabbitTemplate.convertAndSend(RabbitMQConfig.instanceStatusesQueueName, instance);
 }
 ```
+***InstanceRepository***
+- Interfaz que extiende JpaRepository para almacenar las instancias.
