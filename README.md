@@ -97,9 +97,10 @@ Creado por:
   </tbody>
 </table>
 
-## Esquema
+## DOCUMENTACIÓN
+### Diagrama de clases
 ![DAD - Diagrama de clases](https://github.com/user-attachments/assets/83a83b99-838c-41a8-8f55-94c74e873251)
-## API
+### API
 ***ApiRestController***
 - Accede a los *endpoints* de discos, instancias y la creación del servidor.
 ```
@@ -149,7 +150,7 @@ public void waitForInstanceStatusMessage(Instance instance) {
 }
 ```
 - También se comunica con *DiskRepository* e *InstanceRepository*.
-## DISKS
+### DISKS
 ***DiskService***
 - Espera a recibir mensajes a través de la cola *disk-requests*, y manda mensajes de cambio de estado a la cola *disk-statuses*.
 
@@ -172,7 +173,7 @@ public void sendStatusUpdate(Disk disk, Disk.Status status) {
 	rabbitTemplate.convertAndSend(RabbitMQConfig.diskStatusesQueueName, disk);
 }
 ```
-## INSTANCES
+### INSTANCES
 ***InstanceService***
 - De manera similar a *DiskService* recibe mensajes a través de *instance-requests* y manda a través de *instance-statuses* sus cambios de estado.
 
