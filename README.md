@@ -176,16 +176,21 @@ public class ServerCreationRequest {
 - Por ejemplo, si se accede a `localhost:8080/disks/` redirecciona a `localhost:8080/disks`
 
 ```
-public class ServerCreationRequest {
-	private Disk disk;
-	private Instance instance;
-	public ServerCreationRequest() {}
-	public ServerCreationRequest(Disk disk, Instance instance, boolean hasDiskRequestEnded, boolean hasInstanceRequestEnded) {
-		this.disk = disk;
-		this.instance = instance;
+@Configuration
+public class TrailingSlashFilter extends OncePerRequestFilter {
+	@Override
+	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+		...
+		// Root path stays the same "/"
+		if (path.length() > 1 && path.endsWith("/")) {
+			String newPath = path.substring(0, path.length() - 1);
+			if (query != null) {
+					newPath += "?" + query;
+			}
+		...
+		}
 	}
 ...
-}
 ```
 
 ### DISKS
