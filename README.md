@@ -6,5 +6,4 @@ Creado por:
 - Bernat Roselló Muñoz
 
 ## Esquema
-
-~~The world is flat.~~
+![DAD - Diagrama de clases](https://github.com/user-attachments/assets/83a83b99-838c-41a8-8f55-94c74e873251)
