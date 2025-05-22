@@ -25,6 +25,7 @@ Creado por:
             <tr><td>Formulario para creación de discos e instancias con html y javascript</td></tr>
             <tr><td>Participación en la creación de entidades</td></tr>
             <tr><td>Participación en la API REST y en los servicios</td></tr>
+            <tr><td>Participación en los controladores</td></tr>
           </tbody>
         </table>
       </td>
