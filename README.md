@@ -101,6 +101,7 @@ Creado por:
 
 ## DOCUMENTACIÓN
 ### Diagrama con las entidades de las Bases de Datos
+![UML Clases](https://github.com/user-attachments/assets/c1152ea4-2e7f-4f64-b94f-1dafaf0d9476)
 
 ### Diagrama de clases
 ![Diagrama de clases](https://github.com/user-attachments/assets/502914a9-4dbd-474e-bdfc-06e78dda637f)
