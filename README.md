@@ -151,6 +151,15 @@ public void waitForInstanceStatusMessage(Instance instance) {
 ```
 - También se comunica con *DiskRepository* e *InstanceRepository*.
 ### DISKS
+***Disk***
+- Clase que representa la entidad de discos.
+| Disk |
+| - | - |
+| Long id | Identificador del disco |
+| int size | Tamaño (en GB) del disco |
+| DiskType type | Enum que puede ser *HDD* o *SSD* |
+| Status status | Enum que puede ser *UNASSIGNED*, *REQUESTED*, *INITIALIZING* o *ASSIGNED* |
+
 ***DiskService***
 - Espera a recibir mensajes a través de la cola *disk-requests*, y manda mensajes de cambio de estado a la cola *disk-statuses*.
 
@@ -174,6 +183,8 @@ public void sendStatusUpdate(Disk disk, Disk.Status status) {
 }
 ```
 ### INSTANCES
+
+
 ***InstanceService***
 - De manera similar a *DiskService* recibe mensajes a través de *instance-requests* y manda a través de *instance-statuses* sus cambios de estado.
 
