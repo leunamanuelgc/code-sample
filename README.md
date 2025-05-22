@@ -95,6 +95,62 @@ Creado por:
         </ul>
       </td>
     </tr>
+    <tr>
+      <td align="left">Antón Rodríguez Seselle</td>
+      <td align="left">
+        <ul>
+          <li>Tarea</li>
+          <li>Otra tarea</li>
+          <li>Más tareas</li>
+        </ul>
+      </td>
+      <td align="left">
+        <ul>
+          <li>"Commit 1"</li>
+          <li>"Commit 2"</li>
+          <li>"Commit 3"</li>
+          <li>"Commit 4"</li>
+          <li>"Commit 5"</li>
+        </ul>
+      </td>
+      <td align="left">
+        <ul>
+          <li>file1.java</li>
+          <li>file2.java</li>
+          <li>file3.java</li>
+          <li>file4.java</li>
+          <li>file5.java</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td align="left">Bernat Roselló Muñoz</td>
+      <td align="left">
+        <ul>
+          <li>Tarea</li>
+          <li>Otra tarea</li>
+          <li>Más tareas</li>
+        </ul>
+      </td>
+      <td align="left">
+        <ul>
+          <li>"Commit 1"</li>
+          <li>"Commit 2"</li>
+          <li>"Commit 3"</li>
+          <li>"Commit 4"</li>
+          <li>"Commit 5"</li>
+        </ul>
+      </td>
+      <td align="left">
+        <ul>
+          <li>file1.java</li>
+          <li>file2.java</li>
+          <li>file3.java</li>
+          <li>file4.java</li>
+          <li>file5.java</li>
+        </ul>
+      </td>
+    </tr>
   </tbody>
 </table>
 
