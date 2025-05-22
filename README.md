@@ -6,10 +6,5 @@ Creado por:
 - Bernat Roselló Muñoz
 
 ## Esquema
-```
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
-```
+
+	~~The world is flat.~~
