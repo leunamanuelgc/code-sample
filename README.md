@@ -154,10 +154,10 @@ public void waitForInstanceStatusMessage(Instance instance) {
 ***Disk***
 - Clase que representa la entidad de discos.
 
-| Disk | |
+| Disk | Descripción |
 | - | - |
 | Long id | Identificador del disco |
-| int size | Tamaño (en GB) del disco |
+| int size | Tamaño del disco (GB) |
 | DiskType type | Enum que puede ser *HDD* o *SSD* |
 | Status status | Enum que puede ser *UNASSIGNED*, *REQUESTED*, *INITIALIZING* o *ASSIGNED* |
 
@@ -184,7 +184,18 @@ public void sendStatusUpdate(Disk disk, Disk.Status status) {
 }
 ```
 ### INSTANCES
+***Instance***
+- Clase que representa la entidad de instancias.
 
+| Disk | Descripción |
+| - | - |
+| Long id | Identificador de la instancia |
+| String name | Nombre de la instancia |
+| int memory | Cantidad de memoria que utiliza la instancia (GB) |
+| int cores | Número de núcleos reservados para la instancia |
+| String IP | Dirección IP asignada |
+| Disk disk | Referencia al disco conectado |
+| Status status | Enum que puede ser *BUILDING_DISK*, *STARTING*, *INITIALIZING*, *ASSIGNING_IP* o *RUNNING* |
 
 ***InstanceService***
 - De manera similar a *DiskService* recibe mensajes a través de *instance-requests* y manda a través de *instance-statuses* sus cambios de estado.
