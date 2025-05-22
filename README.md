@@ -101,7 +101,70 @@ Creado por:
 ### Esquema
 ![DAD - Diagrama de clases](https://github.com/user-attachments/assets/83a83b99-838c-41a8-8f55-94c74e873251)
 ### API
-> aaa
+***ApiRestController***
+- Accede a los *endpoints* de discos, instancias y la creación del servidor.
+***ApiService***
+- Se comunica con *DiskService* e *InstanceService*, a través del Broker RabbitMQ. Envía mensajes a las colas *disk-requests* e *instance-requests* y recibe mensajes de la cola *disk-statuses* e *instance-statuses*.
+```
+public void sendDiskRequest(Disk disk) {
+  System.out.println("Sending disk request to disk service through: " + RabbitMQConfig.diskRequestsQueueName);
+  rabbitTemplate.convertAndSend(RabbitMQConfig.diskRequestsQueueName, disk);
+}
+```
+```
+@RabbitListener(queues=RabbitMQConfig.diskStatusesQueueName, ackMode="AUTO")
+public void waitForDiskStatusMessage(Disk disk) {
+  ...
+}
+```
+```
+public void sendInstanceRequest(Instance instance) {
+  System.out.println("Sending instance request to instance service through: " + RabbitMQConfig.instanceRequestsQueueName);
+  rabbitTemplate.convertAndSend(RabbitMQConfig.instanceRequestsQueueName, instance);
+}
+```
+```
+@RabbitListener(queues=RabbitMQConfig.instanceStatusesQueueName, ackMode="AUTO")
+public void waitForInstanceStatusMessage(Instance instance) {
+  ...
+}
+```
+- También se comunica con *DiskRepository* e *InstanceRepository*.
+### DISKS
+***DiskService***
+- Espera a recibir mensajes a través de la cola *disk-requests*, y manda mensajes de cambio de estado a la cola *disk-statuses*.
+```
+@RabbitListener(queues=RabbitMQConfig.diskRequestsQueueName, ackMode="AUTO")
+public void onDiskRequestMessage(Disk disk) {
+  System.out.println("Disk request through " + RabbitMQConfig.diskRequestsQueueName + " received");
+  System.out.println("Create -> " + disk);
+  diskCreation(disk);
+}
+```
+```
+public void sendStatusUpdate(Disk disk, Disk.Status status) {
+		disk.setStatus(status);
+		System.out.println("Sending disk status updated through " + RabbitMQConfig.diskStatusesQueueName);
+		rabbitTemplate.convertAndSend(RabbitMQConfig.diskStatusesQueueName, disk);
+	}
+```
+### INSTANCES
+***InstanceService***
+- De manera similar a *DiskService* recibe mensajes a través de *instance-requests* y manda a través de *instance-statuses* sus cambios de estado.
+```
+@RabbitListener(queues=RabbitMQConfig.instanceRequestsQueueName, ackMode="AUTO")
+public void onInstanceRequestMessage(Instance instance) {
+  System.out.println("Instance request through " + RabbitMQConfig.instanceRequestsQueueName + " received");
+  System.out.println("Create -> " + instance);
+  instanceCreation(instance);
+}
+```
+```
+public void sendStatusUpdate(Instance instance, Instance.Status status) {
+  instance.setStatus(status);
+  System.out.println("Sending instance status updated through " + RabbitMQConfig.instanceStatusesQueueName);
+  rabbitTemplate.convertAndSend(RabbitMQConfig.instanceStatusesQueueName, instance);
+}
 ```
 
-```
+
