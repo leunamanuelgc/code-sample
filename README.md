@@ -99,6 +99,10 @@ Creado por:
 
 ## INSTRUCCIONES DE EJECUCIÓN
 
+## POSTMAN
+
+## DOCKER
+
 ## DOCUMENTACIÓN
 ### Diagrama con las entidades de las Bases de Datos
 ![UML Clases](https://github.com/user-attachments/assets/c1152ea4-2e7f-4f64-b94f-1dafaf0d9476)
