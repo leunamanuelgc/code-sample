@@ -102,6 +102,16 @@ Creado por:
 ## API
 ***ApiRestController***
 - Accede a los *endpoints* de discos, instancias y la creación del servidor.
+```
+@PostMapping("/servers")
+public ResponseEntity<?> createServer(@RequestBody ServerCreationRequest request)  {
+	...
+	apiService.handleServerCreationRequest(request);
+	...
+	return ResponseEntity.accepted().body(ids);
+}
+```
+De esta manera se puede recibir toda la información del formulario de creación de discos e instancias, y dejar que *ApiService* se encargue de enviar las peticiones de creación de discos e instancias.
 ***ApiService***
 - Se comunica con *DiskService* e *InstanceService*, a través del Broker RabbitMQ. Envía mensajes a las colas *disk-requests* e *instance-requests* y recibe mensajes de la cola *disk-statuses* e *instance-statuses*.
 ```
