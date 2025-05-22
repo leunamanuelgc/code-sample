@@ -103,7 +103,7 @@ Creado por:
 ### Diagrama con las entidades de las Bases de Datos
 
 ### Diagrama de clases
-![Diagrama de clases](https://github.com/user-attachments/assets/ba9ab9a9-54ef-44f5-b6d7-be2d823319fa)
+![Diagrama de clases](https://github.com/user-attachments/assets/502914a9-4dbd-474e-bdfc-06e78dda637f)
 
 ### API
 ***ApiRestController***
