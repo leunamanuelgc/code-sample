@@ -21,10 +21,10 @@ Creado por:
       <td align="left">
         <table>
           <tbody>
-            <tr>Gestión de los mensajes asíncronos entre servicios</tr>
-            <tr>Formulario para creación de discos e instancias con html y javascript</tr>
-            <tr>Participación en la creación de entidades</tr>
-            <tr>Participación en la API REST y en los servicios</tr>
+            <tr><td>Gestión de los mensajes asíncronos entre servicios</td></tr>
+            <tr><td>Formulario para creación de discos e instancias con html y javascript</td></tr>
+            <tr><td>Participación en la creación de entidades</td></tr>
+            <tr><td>Participación en la API REST y en los servicios</td></tr>
           </tbody>
         </table>
       </td>
