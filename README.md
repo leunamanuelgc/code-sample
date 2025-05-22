@@ -152,6 +152,7 @@ public void waitForInstanceStatusMessage(Instance instance) {
 ## DISKS
 ***DiskService***
 - Espera a recibir mensajes a través de la cola *disk-requests*, y manda mensajes de cambio de estado a la cola *disk-statuses*.
+
 | Recepción de *DiskRequest* |
 | - |
 ```
@@ -174,6 +175,7 @@ public void sendStatusUpdate(Disk disk, Disk.Status status) {
 ## INSTANCES
 ***InstanceService***
 - De manera similar a *DiskService* recibe mensajes a través de *instance-requests* y manda a través de *instance-statuses* sus cambios de estado.
+
 | Recepción de *InstanceRequests* |
 | - |
 ```
