@@ -173,7 +173,7 @@ public class ServerCreationRequest {
 ```
 ***TrailingSlashFilter***
 - Permite redireccionar a los endpoints correctos independientemente de si se les añade "/" al final.
-- Por ejemplo, si se accede a > localhost:8080/disks/ redirecciona a > localhost:8080/disks
+- Por ejemplo, si se accede a `localhost:8080/disks/` redirecciona a `localhost:8080/disks`
 
 ```
 public class ServerCreationRequest {
@@ -262,4 +262,4 @@ public void sendStatusUpdate(Instance instance, Instance.Status status) {
 ```
 ***InstanceRepository***
 - Interfaz que extiende JpaRepository para almacenar las instancias.
-- Añade la consulta de existencia de una instancia por su Id > Boolean existsByIP(String IP);
+- Añade la consulta de existencia de una instancia por su Id: `Boolean existsByIP(String IP);`
