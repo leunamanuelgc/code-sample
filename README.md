@@ -124,21 +124,24 @@ public void sendDiskRequest(Disk disk) {
   rabbitTemplate.convertAndSend(RabbitMQConfig.diskRequestsQueueName, disk);
 }
 ```
-Recepción de *DiskStatuses*
+| Recepción de *DiskStatuses* |
+| - |
 ```
 @RabbitListener(queues=RabbitMQConfig.diskStatusesQueueName, ackMode="AUTO")
 public void waitForDiskStatusMessage(Disk disk) {
   ...
 }
 ```
-Envío de *InstanceRequest*
+| Envío de *InstanceRequest* |
+| - |
 ```
 public void sendInstanceRequest(Instance instance) {
   System.out.println("Sending instance request to instance service through: " + RabbitMQConfig.instanceRequestsQueueName);
   rabbitTemplate.convertAndSend(RabbitMQConfig.instanceRequestsQueueName, instance);
 }
 ```
-Recepción de *InstanceStatuses*
+| Recepción de *InstanceStatuses* |
+| - |
 ```
 @RabbitListener(queues=RabbitMQConfig.instanceStatusesQueueName, ackMode="AUTO")
 public void waitForInstanceStatusMessage(Instance instance) {
@@ -149,6 +152,8 @@ public void waitForInstanceStatusMessage(Instance instance) {
 ## DISKS
 ***DiskService***
 - Espera a recibir mensajes a través de la cola *disk-requests*, y manda mensajes de cambio de estado a la cola *disk-statuses*.
+| Recepción de *DiskRequest* |
+| - |
 ```
 @RabbitListener(queues=RabbitMQConfig.diskRequestsQueueName, ackMode="AUTO")
 public void onDiskRequestMessage(Disk disk) {
@@ -157,6 +162,8 @@ public void onDiskRequestMessage(Disk disk) {
   diskCreation(disk);
 }
 ```
+| Envío de *DiskStatuses* |
+| - |
 ```
 public void sendStatusUpdate(Disk disk, Disk.Status status) {
 	disk.setStatus(status);
@@ -167,6 +174,8 @@ public void sendStatusUpdate(Disk disk, Disk.Status status) {
 ## INSTANCES
 ***InstanceService***
 - De manera similar a *DiskService* recibe mensajes a través de *instance-requests* y manda a través de *instance-statuses* sus cambios de estado.
+| Recepción de *InstanceRequests* |
+| - |
 ```
 @RabbitListener(queues=RabbitMQConfig.instanceRequestsQueueName, ackMode="AUTO")
 public void onInstanceRequestMessage(Instance instance) {
@@ -175,6 +184,8 @@ public void onInstanceRequestMessage(Instance instance) {
   instanceCreation(instance);
 }
 ```
+| Envío de *InstanceStatuses* |
+| - |
 ```
 public void sendStatusUpdate(Instance instance, Instance.Status status) {
   instance.setStatus(status);
