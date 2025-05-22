@@ -142,10 +142,10 @@ public void onDiskRequestMessage(Disk disk) {
 ```
 ```
 public void sendStatusUpdate(Disk disk, Disk.Status status) {
-		disk.setStatus(status);
-		System.out.println("Sending disk status updated through " + RabbitMQConfig.diskStatusesQueueName);
-		rabbitTemplate.convertAndSend(RabbitMQConfig.diskStatusesQueueName, disk);
-	}
+	disk.setStatus(status);
+	System.out.println("Sending disk status updated through " + RabbitMQConfig.diskStatusesQueueName);
+	rabbitTemplate.convertAndSend(RabbitMQConfig.diskStatusesQueueName, disk);
+}
 ```
 ## INSTANCES
 ***InstanceService***
