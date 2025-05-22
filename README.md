@@ -1,5 +1,4 @@
 # PRÁCTICA OBLIGATORIA DESARROLLO DE APLICACIONES DISTRIBUIDAS
-## Aplicación distribuida para la gestión de un centro de procesamiento de datos
 Creado por:
 <table>
   <tbody>
@@ -97,6 +96,9 @@ Creado por:
     </tr>
   </tbody>
 </table>
+
+## Aplicación distribuida para la gestión de un centro de procesamiento de datos
+
 
 ## Esquema
 ![DAD - Diagrama de clases](https://github.com/user-attachments/assets/83a83b99-838c-41a8-8f55-94c74e873251)
