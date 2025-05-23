@@ -1,12 +1,18 @@
 # PRÁCTICA OBLIGATORIA DESARROLLO DE APLICACIONES DISTRIBUIDAS: Aplicación distribuida para la gestión de un centro de procesamiento de datos
 Creado por:
 <table style="width:100%">
+	<colgroup>
+	 <col span="1" style="width: 30%;">
+	 <col span="1" style="width: 70%;">
+	 <col span="1" style="width: 70%;">
+	 <col span="1" style="width: 30%;">
+	</colgroup>
   <tbody>
     <tr>
-      <th align="center" style="width:100px">Alumno</th>
+      <th align="center">Alumno</th>
       <th align="center">Tareas realizadas</th>
       <th align="center">Commits</th>
-      <th align="center" style="width:100px">Ficheros</th>
+      <th align="center">Ficheros</th>
     </tr>
     <tr>
       <td align="left">Manuel Gutiérrez Castro</td>
