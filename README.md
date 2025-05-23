@@ -1,6 +1,6 @@
 # PRÁCTICA OBLIGATORIA DESARROLLO DE APLICACIONES DISTRIBUIDAS: Aplicación distribuida para la gestión de un centro de procesamiento de datos
 Creado por:
-<table style="width:100%">
+<table style="width:50%">
 	<colgroup>
 	 <col span="1" style="width: 30%;">
 	 <col span="1" style="width: 70%;">
