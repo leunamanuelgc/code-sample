@@ -9,8 +9,8 @@ Creado por:
       <th align="center" style="width: 10%;">Ficheros</th>
     </tr>
     <tr>
-      <td align="left">Manuel Gutiérrez Castro</td>
-      <td align="left">
+      <td align="left" style="width: 10%;">Manuel Gutiérrez Castro</td>
+      <td align="left" style="width: 40%;">
         <ul>
           <li>Gestión de los mensajes asíncronos entre servicios</li>
           <li>Formulario para creación de discos e instancias con HTML, JS y AJAX</li>
@@ -20,7 +20,7 @@ Creado por:
 					<li>Creación del README.md y los diagramas de clase y UML</li>
         </ul>
       </td>
-      <td align="left">
+      <td align="left" style="width: 40%;">
         <ul>
           <li>"Added full Disk and Instance creation functionality"</li>
           <li>"Added AMQP for disks creation"</li>
@@ -29,7 +29,7 @@ Creado por:
           <li>"Refactor services + controller into one"</li>
         </ul>
       </td>
-      <td align="left">
+      <td align="left" style="width: 10%;">
         <ul>
           <li>InstanceService.java</li>
           <li>DiskService.java</li>
@@ -40,8 +40,8 @@ Creado por:
       </td>
     </tr>
     <tr>
-      <td align="left">Antón Rodríguez Seselle</td>
-      <td align="left">
+      <td align="left" style="width: 10%;">Antón Rodríguez Seselle</td>
+      <td align="left" style="width: 40%;">
         <ul>
           <li>Implementación de la API REST y controladores.</li>
 					<li>Implementación de las entidades</li>
@@ -50,7 +50,7 @@ Creado por:
 					<li>Postman Collections</li>
         </ul>
       </td>
-      <td align="left">
+      <td align="left" style="width: 40%;">
         <ul>
           <li>"Frontend (.html templates) and basic application controller"</li>
           <li>"Disk management"</li>
@@ -59,7 +59,7 @@ Creado por:
           <li>"Commit 5"</li>
         </ul>
       </td>
-      <td align="left">
+      <td align="left" style="width: 10%;">
         <ul>
           <li>ApiRestController.java</li>
 					<li>ApiService.java</li>
@@ -70,15 +70,15 @@ Creado por:
       </td>
     </tr>
     <tr>
-      <td align="left">Bernat Roselló Muñoz</td>
-      <td align="left">
+      <td align="left" style="width: 10%;">Bernat Roselló Muñoz</td>
+      <td align="left" style="width: 40%;">
         <ul>
 					<li>Separación del proyecto en módulos para cada servicio y gestión de dependencias compartidas</li>
           <li>Dockerización de la aplicación en microservicios</li>
           <li>Más tareas</li>
         </ul>
       </td>
-      <td align="left">
+      <td align="left" style="width: 40%;">
         <ul>
           <li>"Finished Maven Multi-Module refactoring"</li>
           <li>"Dockerizado los microservicios"</li>
@@ -87,7 +87,7 @@ Creado por:
           <li>"Commit 5"</li>
         </ul>
       </td>
-      <td align="left">
+      <td align="left" style="width: 10%;">
         <ul>
           <li>docker-compose.yml</li>
           <li>file2.java</li>
