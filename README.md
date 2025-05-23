@@ -1,22 +1,23 @@
 # PRÁCTICA OBLIGATORIA DESARROLLO DE APLICACIONES DISTRIBUIDAS: Aplicación distribuida para la gestión de un centro de procesamiento de datos
 Creado por:
-<table>
+<table style="width:100%">
   <tbody>
     <tr>
-      <th align="center">Alumno</th>
+      <th align="center" style="width:20%">Alumno</th>
       <th align="center">Tareas realizadas</th>
       <th align="center">Commits</th>
-      <th align="center">Ficheros</th>
+      <th align="center" style="width:20%">Ficheros</th>
     </tr>
     <tr>
       <td align="left">Manuel Gutiérrez Castro</td>
       <td align="left">
         <ul>
           <li>Gestión de los mensajes asíncronos entre servicios</li>
-          <li>Formulario para creación de discos e instancias con html y javascript</li>
+          <li>Formulario para creación de discos e instancias con HTML, JS y AJAX</li>
           <li>Participación en la creación de entidades</li>
           <li>Participación en la API REST y en los servicios</li>
-          <li>Participación en los controladores</li>
+          <li>Participación en los controladores y endpoints</li>
+					<li>Creación del README.md y los diagramas de clase y UML</li>
         </ul>
       </td>
       <td align="left">
@@ -42,27 +43,29 @@ Creado por:
       <td align="left">Antón Rodríguez Seselle</td>
       <td align="left">
         <ul>
-          <li>Tarea</li>
-          <li>Otra tarea</li>
-          <li>Más tareas</li>
+          <li>Implementación de la API REST y controladores.</li>
+					<li>Implementación de las entidades</li>
+          <li>Frontend del índice, y mostrar discos e instancias</li>
+          <li>Creación y gestión de los endpoints web</li>
+					<li>Postman Collections</li>
         </ul>
       </td>
       <td align="left">
         <ul>
-          <li>"Commit 1"</li>
-          <li>"Commit 2"</li>
-          <li>"Commit 3"</li>
-          <li>"Commit 4"</li>
+          <li>"Frontend (.html templates) and basic application controller"</li>
+          <li>"Disk management"</li>
+          <li>"Instance management"</li>
+          <li>"Update the frontend and application controller to pass data to the model…"</li>
           <li>"Commit 5"</li>
         </ul>
       </td>
       <td align="left">
         <ul>
-          <li>file1.java</li>
-          <li>file2.java</li>
-          <li>file3.java</li>
-          <li>file4.java</li>
-          <li>file5.java</li>
+          <li>ApiRestController.java</li>
+					<li>ApiService.java</li>
+          <li>Disk.java</li>
+          <li>Instance.java</li>
+          <li>ApplicationViewController.java</li>
         </ul>
       </td>
     </tr>
@@ -70,15 +73,15 @@ Creado por:
       <td align="left">Bernat Roselló Muñoz</td>
       <td align="left">
         <ul>
-          <li>Tarea</li>
-          <li>Otra tarea</li>
+					<li>Separación del proyecto en módulos para cada servicio y gestión de dependencias compartidas</li>
+          <li>Dockerización de la aplicación en microservicios</li>
           <li>Más tareas</li>
         </ul>
       </td>
       <td align="left">
         <ul>
-          <li>"Commit 1"</li>
-          <li>"Commit 2"</li>
+          <li>"Finished Maven Multi-Module refactoring"</li>
+          <li>"Dockerizado los microservicios"</li>
           <li>"Commit 3"</li>
           <li>"Commit 4"</li>
           <li>"Commit 5"</li>
@@ -86,7 +89,7 @@ Creado por:
       </td>
       <td align="left">
         <ul>
-          <li>file1.java</li>
+          <li>docker-compose.yml</li>
           <li>file2.java</li>
           <li>file3.java</li>
           <li>file4.java</li>
@@ -98,6 +101,9 @@ Creado por:
 </table>
 
 ## INSTRUCCIONES DE EJECUCIÓN
+Desde la raíz del repositorio:
+- Compilar: `docker compose build`
+- Ejecutar: `docker compose up`
 
 ## POSTMAN
 
@@ -160,6 +166,13 @@ public void waitForInstanceStatusMessage(Instance instance) {
   ...
 }
 ```
+***InstanceRepository***
+- Interfaz que extiende JpaRepository para almacenar las instancias.
+- Añade la consulta de existencia de una instancia por su Id: `Boolean existsByIP(String IP);`
+
+***DiskRepository***
+- Interfaz que extiende JpaRepository para almacenar los discos.
+
 ***ServerCreationRequest***
 - Un DTO que empaqueta los discos e instancias creados desde el formulario, y los envía con AJAX al ApiRestController.
 
@@ -229,9 +242,6 @@ public void sendStatusUpdate(Disk disk, Disk.Status status) {
 	rabbitTemplate.convertAndSend(RabbitMQConfig.diskStatusesQueueName, disk);
 }
 ```
-***DiskRepository***
-- Interfaz que extiende JpaRepository para almacenar los discos.
-
 ### INSTANCES
 ***Instance***
 - Clase que representa la entidad de instancias.
@@ -268,6 +278,3 @@ public void sendStatusUpdate(Instance instance, Instance.Status status) {
   rabbitTemplate.convertAndSend(RabbitMQConfig.instanceStatusesQueueName, instance);
 }
 ```
-***InstanceRepository***
-- Interfaz que extiende JpaRepository para almacenar las instancias.
-- Añade la consulta de existencia de una instancia por su Id: `Boolean existsByIP(String IP);`
