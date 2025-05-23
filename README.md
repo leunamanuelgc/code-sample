@@ -3,10 +3,10 @@ Creado por:
 <table style="width:100%">
   <tbody>
     <tr>
-      <th style="width:10%">Alumno</th>
+      <th align="center" style="width:100px">Alumno</th>
       <th align="center">Tareas realizadas</th>
       <th align="center">Commits</th>
-      <th style="width:10%">Ficheros</th>
+      <th align="center" style="width:100px">Ficheros</th>
     </tr>
     <tr>
       <td align="left">Manuel Gutiérrez Castro</td>
