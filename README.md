@@ -26,7 +26,7 @@ Creado por:
           <li>"Added AMQP for disks creation"</li>
           <li>"Added RabbitMQConfig, and started queueing implementation"</li>
           <li>"Add disk-instance OneToOne relation"</li>
-          <li>[Refactor services + controller into one](https://github.com/antoonrs/Practica_obligatoria_DAD/commit/d81fedb3a3183177726c00d77ea37b017b78c77a)</li>
+          <li><a href="https://github.com/antoonrs/Practica_obligatoria_DAD/commit/d81fedb3a3183177726c00d77ea37b017b78c77a">Refactor services + controller into one</a></li>
         </ul>
       </td>
       <td align="left">
